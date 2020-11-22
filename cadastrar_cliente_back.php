@@ -15,24 +15,24 @@
 
             //echo "Conexão realizada com sucesso.";
             $sql = "INSERT INTO cliente 
-                    (razao_social, cnpj, nome, email, telefone, endereco)
+                    (razao_social, nome, cnpj, email, telefone, endereco)
                     VALUES 
                     (?, ?, ?, ?, ?, ?)";
             $stmt= $conn->prepare($sql);
-            $stmt->execute([$nome, $razao_social, $cnpj, $email, $telefone, $endereco]);
+            $stmt->execute([$razao_social, $nome, $cnpj, $email, $telefone, $endereco]);
 
-            $resultado_cadastro["msg"] = "Cliente Cadastrado com Sucesso!";
-            $resultado_cadastro["cod"] = 1;
-            $resultado_cadastro["style"] = "alert-success";
+            $resultado_cad_cliente["msg"] = "Cliente Cadastrado com Sucesso!";
+            $resultado_cad_cliente["cod"] = 1;
+            $resultado_cad_cliente["style"] = "alert-success";
 
         } catch(PDOException $e) {
             echo "Inserção no banco de dados falhou: " . $e->getMessage();
-            $resultado_cadastro["msg"] = "Cliente não Cadastrado.";
-            $resultado_cadastro["cod"] = 0;
-            $resultado_cadastro["style"] = "alert-danger";
+            $resultado_cad_cliente["msg"] = "Cliente não Cadastrado.";
+            $resultado_cad_cliente["cod"] = 0;
+            $resultado_cad_cliente["style"] = "alert-danger";   
 
             }
         $conn = null;
     }
-    include("dashboard.php");
+    include("painel_de_controle.php");
 ?>

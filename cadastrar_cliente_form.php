@@ -10,11 +10,18 @@
 <body>
     <div>
         <h1 class="mt-1">BI Tecnologia</h1>
-        <a href="dashboard.php">Voltar</a>
+        <br/>
+        <br/>
+        <a href="painel_de_controle.php">Voltar</a>
+        <br/>
+        <br/>
+        <a href="listar_clientes_back.php">Lista de clientes</a>
+        <br/>
+        <br/>
     </div>
 <div class="container text-center mt-5">
         <h2 class="display-4 mb-5">Cadastrar novo Cliente</h2>
-        <form action="cadastrar_cliente.php" method="POST">
+        <form action="cadastrar_cliente_back.php" method="POST">
             <div class="form-group">
                 <input type="text" required class="form-control" id="nome" name="nome" placeholder="Nome do Cliente" />
             </div>    

@@ -12,7 +12,7 @@
     <div class="container text-center mt-5">
         <h1 class="display-1 mb-5">BI Tecnologia</h1>
         <h2 class="display-4 mb-5">Acesso ao Sistema!</h2>
-        <form id="form_login" action="login.php" method="POST">
+        <form id="form_login" action="login_back.php" method="POST">
             <?php if(isset($resultado_login) && $resultado_login["cod"] == 0): ?>
                 <div class="alert alert-danger">
                     <?php echo $resultado_login["msg"]; ?>  

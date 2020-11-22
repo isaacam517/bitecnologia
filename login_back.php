@@ -11,20 +11,26 @@ if(count($_POST) > 0) {
         //conexao com o banco
         include("conexao_bd.php");
         //echo "Conexão realizada com sucesso.";
-        $consulta = $conn->prepare("SELECT nome_funcionario FROM funcionario WHERE email_funcionario=:email AND senha_funcionario=md5(:senha)");
+        $consulta = $conn->prepare("SELECT * FROM funcionario WHERE email_funcionario=:email AND senha_funcionario=md5(:senha)");
         $consulta->bindParam(':email', $email, PDO::PARAM_STR);
         $consulta->bindParam(':senha', $senha, PDO::PARAM_STR);
         $consulta->execute();
 
         //Verificar se email e senha estão no banco
         $result = $consulta->FetchAll();
-        //print_r(count($result));
         $qtd_funcionario = count($result);
-
+        
         if($qtd_funcionario ==1) {
             // TODO substituir pelo redirecionamento
-            $resultado_login["msg"] = "Funcionário encontrado!";
-            $resultado_login["cod"] = 1;
+            session_start();
+            $_SESSION["email_funcionario"] = $email;
+            $_SESSION["nome_funcionario"] = $result[0]["nome_funcionario"]; 
+
+
+            // echo "<pre>";
+            // print_r($_SESSION);
+            // echo "</pre>";
+            // exit;
         } else if($qtd_funcionario == 0){
             $resultado_login["msg"] = "Email e/ou Senha não conferem.";
             $resultado_login["cod"] = 0;
@@ -37,7 +43,6 @@ if(count($_POST) > 0) {
 
 }
 
-    include("dashboard.php");
-
+    include("painel_de_controle.php");
 ?>
 
