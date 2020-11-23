@@ -1,15 +1,10 @@
 <?php
     if(count($_GET) > 0) {
-        // 1. Pegar os valores do formulário
-        $id      = $_GET["id"];
-      
-        // TODO pegar o código do usuário logado (chave estrangeira)
-        
+        $id = $_GET["id"];
         try {
             //conexao com o banco
             include("conexao_bd.php");
 
-            //echo "Conexão realizada com sucesso.";
             $sql = "DELETE FROM projetos
             WHERE id=?";
             $stmt= $conn->prepare($sql);
@@ -24,13 +19,8 @@
             $resultado_remover_projeto["msg"] = "ERRO AO REMOVER.";
             $resultado_remover_projeto["cod"] = 0;
             $resultado_remover_projeto["style"] = "alert-danger";
-
             }
         $conn = null;
     }
-
-    
-
-   
     include("painel_de_controle.php");
 ?>

@@ -8,18 +8,10 @@
         $situacao          = $_POST["situacao"];
         $cliente           = $_POST["cliente"];
         $id                = $_POST["id"];
-
-        // echo "<pre>";
-        // print_r($id); 
-        // echo "<pre>";
-        // exit;
-        // TODO pegar o código do usuário logado (chave estrangeira)
-        
         try {
             //conexao com o banco
             include("conexao_bd.php");
 
-            //echo "Conexão realizada com sucesso.";
             $sql = "UPDATE projetos SET nome_projeto = ?, descricao_projeto = ?, valor = ?, prazo = ?, situacao = ?, cliente = ?
             WHERE id=?";
             $stmt= $conn->prepare($sql);
@@ -28,16 +20,13 @@
             $resultado_alteracao_projeto["msg"] = "OS DADOS DO PROJETO FORAM ALTERADO COM SUCESSO!";
             $resultado_alteracao_projeto["cod"] = 1;
             $resultado_alteracao_projeto["style"] = "alert-success";
-
         } catch(PDOException $e) {
             echo "Inserção no banco de dados falhou: " . $e->getMessage();
             $resultado_alteracao_projeto["msg"] = "ERRO AO ALTERAR DADOS DO CLIENTE.";
             $resultado_alteracao_projeto["cod"] = 0;
             $resultado_alteracao_projeto["style"] = "alert-danger";
-
             }
         $conn = null;
     }
-
     include("painel_de_controle.php");
 ?>

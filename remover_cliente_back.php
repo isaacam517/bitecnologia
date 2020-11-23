@@ -1,15 +1,10 @@
 <?php
     if(count($_GET) > 0) {
-        // 1. Pegar os valores do formulário
-        $id      = $_GET["id"];
-      
-        // TODO pegar o código do usuário logado (chave estrangeira)
-        
+        $id = $_GET["id"];
         try {
             //conexao com o banco
             include("conexao_bd.php");
 
-            //echo "Conexão realizada com sucesso.";
             $sql = "DELETE FROM cliente
             WHERE id=?";
             $stmt= $conn->prepare($sql);
@@ -28,9 +23,5 @@
             }
         $conn = null;
     }
-
-    
-
-   
     include("painel_de_controle.php");
 ?>

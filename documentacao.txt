@@ -31,12 +31,12 @@ Requisitos
 [Desejável]
 
 	Interface do sistema agradável e com uma boa experiência ao usuário
-	Utilizar POO (Programação orientada a objetos).
+	--TODO--    Utilizar POO (Programação orientada a objetos).
 	Validação do cadastro não permitindo cadastrar sem os campos obrigatórios informado.
-	Validação do número de CNPJ.
-	Verificar a data de prazo do Projeto, para informar ao usuário se o mesmo se encontra atrasado.
+	--TODO--    Validação do número de CNPJ.
+	--TODO--    Verificar a data de prazo do Projeto, para informar ao usuário se o mesmo se encontra atrasado.
 	Ter um sistema de autenticação para ter acesso as páginas da aplicação.
-	Relatório, ter a opção de exportar a listagem de clientes em PDF e XLS.
+	--TODO--    Relatório, ter a opção de exportar a listagem de clientes em PDF e XLS.
 	Utilizar GIT para controle de versionamento do código da aplicação.
 	
 Obs: Você está livre para adicionar novos campos e funcionalidades a aplicação caso ache necessário

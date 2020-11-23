@@ -7,13 +7,10 @@
         $prazo             = $_POST["prazo"];
         $situacao            = $_POST["situacao"];
         $id_cliente           = $_POST["cliente"];
-        // TODO pegar o código do usuário logado (chave estrangeira)
         
         try {
             //conexao com o banco
             include("conexao_bd.php");
-
-            //echo "Conexão realizada com sucesso.";
             $sql = "INSERT INTO projetos 
                     (nome_projeto, descricao_projeto, valor, prazo, situacao, cliente)
                     VALUES 
@@ -24,19 +21,13 @@
             $resultado_cad_cliente["msg"] = "Projeto Cadastrado com Sucesso!";
             $resultado_cad_cliente["cod"] = 1;
             $resultado_cad_cliente["style"] = "alert-success";
-
         } catch(PDOException $e) {
             echo "Inserção no banco de dados falhou: " . $e->getMessage();
             $resultado_cad_cliente["msg"] = "Projeto não Cadastrado.";
             $resultado_cad_cliente["cod"] = 0;
             $resultado_cad_cliente["style"] = "alert-danger";
-
             }
         $conn = null;
     }
-
-    
-
-
     include("painel_de_controle.php");
 ?>

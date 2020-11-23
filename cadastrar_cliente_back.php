@@ -7,13 +7,9 @@
         $email        = $_POST["email"];
         $telefone     = $_POST["telefone"];
         $endereco     = $_POST["endereco"];
-        // TODO pegar o código do usuário logado (chave estrangeira)
-        
         try {
             //conexao com o banco
             include("conexao_bd.php");
-
-            //echo "Conexão realizada com sucesso.";
             $sql = "INSERT INTO cliente 
                     (razao_social, nome, cnpj, email, telefone, endereco)
                     VALUES 
@@ -24,13 +20,11 @@
             $resultado_cad_cliente["msg"] = "Cliente Cadastrado com Sucesso!";
             $resultado_cad_cliente["cod"] = 1;
             $resultado_cad_cliente["style"] = "alert-success";
-
         } catch(PDOException $e) {
             echo "Inserção no banco de dados falhou: " . $e->getMessage();
             $resultado_cad_cliente["msg"] = "Cliente não Cadastrado.";
             $resultado_cad_cliente["cod"] = 0;
             $resultado_cad_cliente["style"] = "alert-danger";   
-
             }
         $conn = null;
     }
