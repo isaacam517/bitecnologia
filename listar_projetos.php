@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse" id="navbarSite" >
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="painel_de_controle.php" ><h5>Painel de controle</h5></a>
+                        <a class="nav-link" href="painel_back.php" ><h5>Painel de controle</h5></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="cadastrar_projeto.php" ><h5>Cadastrar Projetos</h5></a>
@@ -31,6 +31,9 @@
             </div>
             <div class="ml-5 ">
                 <h5>Olá, <?= $_SESSION["nome_funcionario"]; ?></h5>
+            </div>
+            <div class="ml-2">
+                <a class="" href="fim_session.php" style="color: white; text-decoration: none;"><h5>SAIR</h5></a>
             </div>
         </div>
     </nav>

@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php //session_start();?>
 <?php if (isset($_SESSION["nome_funcionario"])): ?> 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -44,8 +44,11 @@
                     </li>
                 </ul>
             </div>
-            <div class="ml-5 ">
+            <div class="ml-2">
                 <h5>Olá, <?= $_SESSION["nome_funcionario"]; ?></h5>
+            </div>
+            <div class="ml-2">
+            <a class="" href="fim_session.php" style="color: white; text-decoration: none;"><h5>SAIR</h5></a>
             </div>
         </div>
     </nav>

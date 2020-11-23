@@ -22,5 +22,5 @@
             }
         $conn = null;
     }
-    include("painel_de_controle.php");
+    include("painel_back.php");
 ?>
