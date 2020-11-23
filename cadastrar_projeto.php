@@ -56,7 +56,7 @@
             </div>
             <div class="form-group">
                 <label>Status:</label>
-                <select class="form-control w-25" name="situacao">
+                <select class="form-control w-25" required name="situacao">
                     <option value="EM ANALISE">Em Análise</option>
                     <option value="APROVADO">Aprovado</option>
                     <option value="REPROVADO">reprovado</option>    
@@ -64,7 +64,7 @@
             </div>             
             <div class="form-group">
                 <label>Nome do Cliente:</label>
-                <select name="cliente" class="form-control w-25">
+                <select name="cliente" required class="form-control w-25">
                 <?php foreach($cliente_para_projeto as $c): ?>
                     <option value="<?= $c["id"]; ?>"><?= $c["nome"]; ?></option>
                 <?php endforeach; ?>

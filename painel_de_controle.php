@@ -1,4 +1,3 @@
-<?php //session_start();?>
 <?php if (isset($_SESSION["nome_funcionario"])): ?> 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -8,8 +7,6 @@
     <title> BI Tecnologia</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
-    <!-- email: isaac@email.com -->
-    <!-- senha: 123456 -->
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -83,7 +80,6 @@
             <?php echo $resultado_remover_projeto["msg"];?>
         </div>
     <?php endif; ?>
-    
         <h2 class="display-4 mb-5">Painel de Controle</h2>
     <p>
         <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Cadastrar/Visualizar Projetos</a>
