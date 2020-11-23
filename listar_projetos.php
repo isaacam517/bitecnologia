@@ -37,7 +37,7 @@
             </div>
         </div>
     </nav>
-    <div class="container text-center mt-5">
+    <div class="text-center mt-5">
         <h2 class="display-4 mb-5">Lista dos Projetos</h2>
         <?php if(count($result_lista_proj) > 0): ?>
         <table class="table jumbotron">
@@ -45,7 +45,7 @@
                 <th>Cod.</th>
                 <th>Projeto</th>
                 <th>Cliente</th>
-                <th>Descrição</th>
+                <th class="w-25">Descrição</th>
                 <th>Valor</th>
                 <th>Data Registro</th>
                 <th>Data Alteração</th>
