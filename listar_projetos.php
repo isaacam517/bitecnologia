@@ -25,7 +25,7 @@
                         <a class="nav-link" href="painel_back.php" ><h5>Painel de controle</h5></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cadastrar_projeto.php" ><h5>Cadastrar Projetos</h5></a>
+                        <a class="nav-link" href="select_cliente_para_novo_projeto_back.php" ><h5>Cadastrar Projetos</h5></a>
                     </li>
                 </ul>
             </div>
@@ -48,12 +48,16 @@
                 <th class="w-25">Descrição</th>
                 <th>Valor</th>
                 <th>Data Registro</th>
-                <th>Data Alteração</th>
                 <th>Prazo</th>
                 <th>Situação</th>
                 <th></th>
                 <th></th>
             </tr>
+            <?php    
+                function data($data){
+                return date("d/m/Y", strtotime($data));
+                }
+            ?>    
             <?php foreach($result_lista_proj as $p): ?>
             <tr>
                 <td><?= $p["id"]; ?></td>
@@ -61,10 +65,10 @@
                 <td><?= $p["cliente"]; ?></td>
                 <td><?= $p["descricao_projeto"]; ?></td>
                 <td><?= $p["valor"]; ?></td>
-                <td><?= $p["data_registro"]; ?></td>
-                <td><?= $p["data_alteracao"]; ?></td>
-                <td><?= $p["prazo"]; ?></td>
-                <td><?= $p["situacao"]; ?></td>
+                <td><?= data($p["data_registro"]); ?></td>
+                <td><?=data($p["prazo"]);?><?= $p["prazos"]; ?>
+                
+                <td><?= $p["situacao"]; ?></td> 
                 <td><a class="btn btn-outline-warning btn-sm" href="alterar_projeto_form.php?id=<?=$p["id"]?>">Alterar</a></td>
                 <td><a class="btn btn-outline-danger btn-sm" onclick="return confirm('Remover  projeto:  <?= $p['nome_projeto']; ?>?')" href="remover_projeto_back.php?id=<?=$p["id"]?>">Remover</a></td>
             </tr>
